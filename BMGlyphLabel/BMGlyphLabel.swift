@@ -129,9 +129,9 @@ open class BMGlyphLabel: SKNode {
             var widthForLine: Int = 0
             var c: unichar
             var node: SKSpriteNode
-            let upperBound = self.text.characters.distance(from: self.text.characters.startIndex, to: self.text.characters.endIndex)
+            let upperBound = self.text.distance(from: self.text.startIndex, to: self.text.endIndex)
             for i in 0...upperBound {
-                if i != self.text.characters.count {
+                if i != self.text.count {
                     c = (self.text as NSString).character(at: i)
                 }
                 else {
@@ -173,18 +173,18 @@ open class BMGlyphLabel: SKNode {
         let childCount: Int = Int(self.children.count)
         let linesCount: Int = self.text.components(separatedBy: "\n").count - 1
         //remove unused SKSpriteNode
-        if self.text.characters.count - linesCount < childCount && childCount > 0 {
+        if self.text.count - linesCount < childCount && childCount > 0 {
             var del: SKSpriteNode
-            for j in ((self.text.characters.count - linesCount + 1)...childCount).reversed() {
+            for j in ((self.text.count - linesCount + 1)...childCount).reversed() {
                 del = self.children[j - 1] as! SKSpriteNode
                 del.removeFromParent()
             }
         }
-        if self.text.characters.count > 0 {
+        if self.text.count > 0 {
             size.height += (CGFloat(self.font.lineHeight) / scaleFactor)
         }
         var realCharCount: Int = 0
-        for i in 0 ..< self.text.characters.count {
+        for i in 0 ..< self.text.count {
             
             let c: unichar = (self.text as NSString).character(at: i)
             if c == "\n".utf16.first {
