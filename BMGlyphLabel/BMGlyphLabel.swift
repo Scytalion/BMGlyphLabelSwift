@@ -229,7 +229,7 @@ open class BMGlyphLabel: SKNode {
         self.totalSize = size
     }
     
-    func setGlyphColor(_ color: SKColor) {
+    public func setGlyphColor(_ color: SKColor) {
         self.color = color
         for letter in self.children {
             (letter as! SKSpriteNode).color = color
