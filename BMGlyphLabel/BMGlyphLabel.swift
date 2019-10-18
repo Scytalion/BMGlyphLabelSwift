@@ -44,7 +44,7 @@ open class BMGlyphLabel: SKNode {
     fileprivate var textJustify: BMGlyphJustify
     fileprivate var color: SKColor
     fileprivate var colorBlendFactor: CGFloat
-    fileprivate var totalSize: CGSize!
+    public private(set) var totalSize: CGSize!
     fileprivate var font : BMGlyphFont!
     
     
