@@ -38,7 +38,7 @@ open class BMGlyphLabel: SKNode {
         case center = 3
     }
     
-    fileprivate var text: String!
+    public private(set) var text: String!
     fileprivate var horizontalAlignment: BMGlyphHorizontalAlignment
     fileprivate var verticalAlignment: BMGlyphVerticalAlignment
     fileprivate var textJustify: BMGlyphJustify
