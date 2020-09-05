@@ -212,8 +212,8 @@ open class BMGlyphLabel: SKNode {
                 letter.colorBlendFactor = colorBlendFactor
                 letter.color = color
                 letter.anchorPoint = CGPoint.zero
-                letter.position = CGPoint(x: pos.x + CGFloat(self.font.xOffset(c) + self.font.kerningForFirst(lastCharId, second: c)) / scaleFactor, y: pos.y - (letter.size.height + CGFloat(self.font.yOffset(c)) / scaleFactor))
-               
+                let y = pos.y - (letter.size.height + CGFloat(self.font.yOffset(c)) / scaleFactor)
+                letter.position = CGPoint(x: pos.x + CGFloat(self.font.xOffset(c) + self.font.kerningForFirst(lastCharId, second: c)) / scaleFactor, y: y.rounded())
                 letter.userData = [
                     "originalPosition" : letter.position
                 ]
