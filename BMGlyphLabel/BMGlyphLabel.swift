@@ -230,11 +230,12 @@ open class BMGlyphLabel: SKNode {
     }
     
     public func setGlyphColor(_ color: SKColor) {
+        guard self.color != color else { return }
+        
         self.color = color
         for letter in self.children {
             (letter as! SKSpriteNode).color = color
         }
-       
     }
     
     func setGlyphColorBlendFactor(_ colorBlendFactor: CGFloat) {
