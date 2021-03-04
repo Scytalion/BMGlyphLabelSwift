@@ -196,8 +196,8 @@ open class BMGlyphLabel: SKNode {
                 //re-use existing SKSpriteNode and re-assign the correct texture
                 if realCharCount < childCount {
                     letter = self.children[realCharCount] as! SKSpriteNode
-                    letter.texture = (self.font.charsTextures["\(c)"] as! SKTexture)
-                    letter.size = letter.texture!.size()
+                    letter.texture = (self.font.charsTextures["\(c)"] as? SKTexture)
+                    letter.size = letter.texture?.size() ?? .zero
                 }
                 else {
                     let glyphTexture = self.font.charsTextures["\(c)"]
